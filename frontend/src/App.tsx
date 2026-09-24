@@ -29,13 +29,6 @@ function formatClock(value: Date | string | null) {
   });
 }
 
-function formatAge(minutes: number) {
-  if (minutes < 1) return "under 1 min old";
-  if (minutes < 90) return `${minutes} min old`;
-
-  return `${(minutes / 60).toFixed(1)} h old`;
-}
-
 function App() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [lastSuccess, setLastSuccess] = useState<Date | null>(null);
@@ -282,7 +275,7 @@ function App() {
                   </p>
                 </div>
 
-                <div>
+                {/* <div>
                   <p className="text-xs text-slate-500">POSITIONS CALCULATED</p>
 
                   <p className="mt-1 font-mono text-sm text-white">
@@ -299,7 +292,7 @@ function App() {
                   <p className="text-xs text-slate-500">TLE DATA FETCHED</p>
 
                   <p className="mt-1 font-mono text-sm text-white">
-                    {formatClock(snapshot?.tle.fetchedAt ?? null)}
+                    {formatClock(snapshot?.tle.fetchedAt ?? " ")}
 
                     {snapshot && (
                       <span
@@ -313,13 +306,13 @@ function App() {
                         {snapshot.tle.stale ? " - STALE" : ""}
                       </span>
                     )}
-                  </p>
+                  </p> 
 
                   <p className="mt-1 text-[11px] text-slate-500">
                     Provider refreshes about every{" "}
                     {snapshot ? snapshot.tle.ttlMinutes : 120} min
                   </p>
-                </div>
+                </div> */}
 
                 <div>
                   <p className="text-xs text-slate-500">HIGHEST RISK SCORE</p>
